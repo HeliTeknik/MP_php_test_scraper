@@ -10,6 +10,21 @@ $html = scraperWiki::scrape( $url );
 
 $dom = new simple_html_dom();
 $dom->load($html);
+foreach($dom->find("div[@class="news-box case-25"]/div/a/@href") as $data){
+    echo "$data<br>";
+    }
+}
+
+
+
+
+/*
+
+$url="http://www.sozcu.com.tr/kategori/yazarlar/";
+$html = scraperWiki::scrape( $url );
+
+$dom = new simple_html_dom();
+$dom->load($html);
 foreach($dom->find("div[@align='left'] tr") as $data){
     $tds = $data->find("td");
     if(count($tds)==12){
@@ -21,6 +36,16 @@ foreach($dom->find("div[@align='left'] tr") as $data){
         scraperwiki::save( array('country'), $record );
     }
 }
+*/
+
+
+
+
+
+
+
+
+
 
 
 ?>
